@@ -1,0 +1,17 @@
+<div class="container" id="dashboard">
+  <p><strong>Welcome to</strong></p>
+  <h1>Spotify</h1>
+  <p>Search your favourite songs over Spotify, just enter an artist's name in the following search box and enjoy</p>
+
+  <div class="row">
+    <button (click)="login()" class="btn btn-success">Login</button>
+  </div>
+  <div class="row">
+    <filter-text (changed)="filterChanged($event)" [filter]="searchText" class="w-50" placeholder="Type the name of your favourite artist"></filter-text>
+  </div>
+
+  <favorite-list *ngIf="showFavorites"></favorite-list>
+
+  <music-search *ngIf="!showFavorites" [text]="searchText" (searchChanged)="refreshSearch($event)"></music-search>
+
+</div>
