@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 export const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-    { path: 'album/:id', loadChildren: './album/album.module#AlbumModule' },
-    { path: 'artist/:id', loadChildren: './artist/artist.module#ArtistModule' },
+    // { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+    { path: '', pathMatch: 'full', redirectTo: 'nh-patients' },
+    // { path: 'nh-patients', loadChildren: './patients/patients.module#PatientsModule' },
     { path: 'callback', loadChildren: './callback/callback.module#CallbackModule' },
     {
         path: '',
