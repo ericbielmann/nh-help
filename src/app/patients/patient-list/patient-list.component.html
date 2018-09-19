@@ -1,8 +1,19 @@
-<h6 class="text-center">Pacientes</h6><br/>
 <table class="table table-sm table-hover">
-  <tr *ngFor="let patient of patients">
+  <thead>
+    <tr>
+      <th>DNI</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Teléfono</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of patients">
+      <td>{{patient.dni}}</td>
       <td>{{patient.name}}</td>
       <td>{{patient.lastName}}</td>
+      <td>{{patient.phone}}</td>
       <td>
         <a class="btn" (click)="onEdit(patient)">
           <i class="fas fa-edit"></i>
@@ -11,5 +22,6 @@
           <i class="far fa-trash-alt"></i>
         </a>
       </td>
-  </tr>
+    </tr>
+  </tbody>
 </table>

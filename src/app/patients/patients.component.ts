@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Patient } from '../models/patient';
+
 @Component({
   selector: 'nh-patients',
   templateUrl: './patients.component.html',
@@ -8,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientsComponent implements OnInit {
 
+  private selectedPatient: Patient;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  setPatient(patient: Patient): void {
+    this.selectedPatient = patient;
+  }
+
+  createPatient(): void {
+    this.selectedPatient = new Patient();
+    this.selectedPatient.key = null;
+  }
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { NgForm } from '@angular/forms'
 
+import { Patient } from '../../models/patient';
 import { PatientService } from '../../services/patient.service';
 import { ToastService } from '../../core/toast.service';
 
@@ -10,12 +11,13 @@ import { ToastService } from '../../core/toast.service';
   styleUrls: ['./patient.component.scss']
 })
 export class PatientComponent implements OnInit {
+  @Input() selectedPatient: Patient;
+  @Output() selectedChange = new EventEmitter<Patient>();
 
   constructor(private patientService: PatientService, private toastService: ToastService) { }
 
   ngOnInit() {
-
-    this.resetForm();
+    // this.resetForm();
   }
 
   onSubmit(patientForm: NgForm) {
@@ -28,10 +30,13 @@ export class PatientComponent implements OnInit {
   }
 
   resetForm(patientForm?: NgForm) {
-    if (patientForm != null)
+    if (patientForm != null) {
       patientForm.reset();
+    }
+
     this.patientService.selectedPatient = {
       key: null,
+      dni: null,
       name: '',
       lastName: '',
       job: '',
@@ -39,6 +44,8 @@ export class PatientComponent implements OnInit {
       genre: '',
       phone: ''
     }
+
+    this.selectedChange.emit(undefined);
   }
 
 }

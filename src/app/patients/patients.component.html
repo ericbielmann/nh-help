@@ -1,11 +1,17 @@
-<div class="text-center">
-  <h2 class="jumbotron">Pacientes</h2>
+<div class="row mb-2">
+  <h4 class="col-auto mr-auto">Pacientes</h4>
+
+  <button type="button" class="btn btn-primary col-auto" (click)="createPatient()">
+    <i class="fa fa-floppy-o"></i>
+    Nuevo</button>
+
 </div>
+
 <div class="row">
-  <div class="col-md-7">
-    <nh-patient></nh-patient>
+  <div class="col-md-12" *ngIf="selectedPatient">
+    <nh-patient [(selectedPatient)]="selectedPatient" (selectedChange)="setPatient($event)"></nh-patient>
   </div>
-  <div class="col-md-5">
-    <nh-patient-list></nh-patient-list>
+  <div class="col-md-12" *ngIf="!selectedPatient">
+    <nh-patient-list (selectedChange)="setPatient($event)"></nh-patient-list>
   </div>
 </div>
