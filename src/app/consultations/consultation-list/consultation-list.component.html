@@ -1,0 +1,27 @@
+<table class="table table-sm table-hover">
+  <thead>
+    <tr>
+      <th>Altura</th>
+      <th>Peso</th>
+      <th>Grasa Total</th>
+      <th>IMC</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let consultation of consultations">
+      <td>{{consultation.height}}</td>
+      <td>{{consultation.weight}}</td>
+      <td>{{consultation.totalFat}}</td>
+      <td>{{consultation.imc}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(consultation)">
+          <i class="fas fa-edit"></i>
+        </a>
+        <a class="btn" (click)="onDelete(consultation.key)">
+          <i class="far fa-trash-alt"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

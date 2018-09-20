@@ -1,7 +1,7 @@
 <div class="row mb-2">
   <h4 class="col-auto mr-auto">Pacientes</h4>
 
-  <button type="button" class="btn btn-primary col-auto" (click)="createPatient()">
+  <button type="button" class="btn btn-primary col-auto" (click)="createPatient()" *ngIf="!selectedPatient">
     <i class="fa fa-floppy-o"></i>
     Nuevo</button>
 

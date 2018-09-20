@@ -1,0 +1,17 @@
+<div class="row mb-2">
+  <h4 class="col-auto mr-auto">Consultas</h4>
+
+  <button type="button" class="btn btn-primary col-auto" (click)="createConsultation()" *ngIf="!selectedConsultation">
+    <i class="fa fa-floppy-o"></i>
+    Nuevo</button>
+
+</div>
+
+<div class="row">
+  <div class="col-md-12" *ngIf="selectedConsultation">
+    <nh-consultation [(selectedConsultation)]="selectedConsultation" (selectedChange)="setConsultation($event)"></nh-consultation>
+  </div>
+  <div class="col-md-12" *ngIf="!selectedConsultation">
+    <nh-consultation-list (selectedChange)="setConsultation($event)"></nh-consultation-list>
+  </div>
+</div>

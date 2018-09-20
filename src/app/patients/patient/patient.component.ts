@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Router } from "@angular/router";
 import { NgForm } from '@angular/forms'
 
 import { Patient } from '../../models/patient';
@@ -14,7 +15,9 @@ export class PatientComponent implements OnInit {
   @Input() selectedPatient: Patient;
   @Output() selectedChange = new EventEmitter<Patient>();
 
-  constructor(private patientService: PatientService, private toastService: ToastService) { }
+  constructor(private patientService: PatientService, 
+    private toastService: ToastService,
+    private router: Router) { }
 
   ngOnInit() {
     // this.resetForm();
@@ -46,6 +49,10 @@ export class PatientComponent implements OnInit {
     }
 
     this.selectedChange.emit(undefined);
+  }
+
+  showConsultations(): void {
+    this.router.navigate([`consultations/${this.selectedPatient.key}`])
   }
 
 }

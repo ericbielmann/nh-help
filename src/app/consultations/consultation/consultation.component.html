@@ -1,0 +1,77 @@
+<form #consultationForm="ngForm" (ngSubmit)="onSubmit(consultationForm)">
+  <input type="hidden" name="key" #key="ngModel" [(ngModel)]="selectedConsultation.key">
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Altura</label>
+        <input type="number" class="form-control" name="height" #height="ngModel" [(ngModel)]="selectedConsultation.height"
+          placeholder="Altura" required>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Cirq. Muñeca</label>
+        <input type="number" class="form-control" name="wristCircumfence" #wristCircumfence="ngModel" [(ngModel)]="selectedConsultation.wristCircumfence"
+          placeholder="Cirq. Muñeca" required>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Peso</label>
+        <input type="number" class="form-control" name="weight" #weight="ngModel" [(ngModel)]="selectedConsultation.weight"
+          placeholder="Peso" required>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Grasa total</label>
+        <input type="number" class="form-control" name="totalFat" #totalFat="ngModel" [(ngModel)]="selectedConsultation.totalFat"
+          placeholder="Grasa total">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Grasa Visceral</label>
+        <input type="number" class="form-control" name="visceralFat" #visceralFat="ngModel" [(ngModel)]="selectedConsultation.visceralFat"
+          placeholder="Grasa Visceral">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>IMC</label>
+        <input type="number" class="form-control" name="imc" #imc="ngModel" [(ngModel)]="selectedConsultation.imc"
+          placeholder="IMC">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>Musculatura</label>
+        <input type="number" class="form-control" name="musculature" #musculature="ngModel" [(ngModel)]="selectedConsultation.musculature"
+          placeholder="Musculatura">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Comentariosa</label>
+        <input type="text" class="form-control" name="comment" #comment="ngModel" [(ngModel)]="selectedConsultation.comment"
+          placeholder="Comentariosa">
+      </div>
+    </div>
+  </div>
+
+  <div class="row float-right">
+    <button class="btn btn-primary mr-1" type="submit" [disabled]="!consultationForm.valid">
+      <i class="fas fa-save"></i>
+      Submit</button>
+    <button class="btn btn-primary" type="button" (click)="resetForm(consultationForm)">
+      <i class="fas fa-ban"></i>
+      Cancel</button>
+  </div>
+</form>

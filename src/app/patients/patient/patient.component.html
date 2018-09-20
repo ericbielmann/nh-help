@@ -2,57 +2,52 @@
   <input type="hidden" name="key" #key="ngModel" [(ngModel)]="selectedPatient.key">
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="form-group">
         <label>Nombre</label>
-        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="selectedPatient.name" placeholder="Nombre"
-          required>
+        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="selectedPatient.name"
+          placeholder="Nombre" required>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="form-group">
         <label>Apellido</label>
         <input type="text" class="form-control" name="lastName" #lastName="ngModel" [(ngModel)]="selectedPatient.lastName"
           placeholder="Apellido" required>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="form-group">
         <label>DNI</label>
-        <input type="number" class="form-control" name="dni" #dni="ngModel" [(ngModel)]="selectedPatient.dni" placeholder="DNI"
-          required>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Ocupación</label>
-        <input type="text" class="form-control" name="job" #position="ngModel" [(ngModel)]="selectedPatient.job" placeholder="Ocupación">
+        <input type="number" class="form-control" name="dni" #dni="ngModel" [(ngModel)]="selectedPatient.dni"
+          placeholder="DNI" required>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Ocupación</label>
+        <input type="text" class="form-control" name="job" #position="ngModel" [(ngModel)]="selectedPatient.job"
+          placeholder="Ocupación">
+      </div>
+    </div>
+    <div class="col-md-4">
       <div class="form-group">
         <label>Dirección</label>
         <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]="selectedPatient.address"
           placeholder="Dirección">
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-2">
       <div class="form-group">
         <label>Sexo</label>
         <input type="text" class="form-control" name="genre" #genre="ngModel" [(ngModel)]="selectedPatient.genre"
           placeholder="Sexo">
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-2">
       <div class="form-group">
         <label>Teléfono</label>
         <input type="text" class="form-control" name="phone" #phone="ngModel" [(ngModel)]="selectedPatient.phone"
@@ -61,12 +56,16 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <button class="btn btn-default" type="submit" [disabled]="!patientForm.valid">
-      <i class="fa fa-floppy-o"></i>
+  <div class="row">
+      <button type="button" class="btn btn-link" (click)="showConsultations()">Ver Consultas</button>
+  </div>
+
+  <div class="row float-right">
+    <button class="btn btn-primary mr-1" type="submit" [disabled]="!patientForm.valid">
+      <i class="fas fa-save"></i>
       Submit</button>
-    <button class="btn btn-default" type="button" (click)="resetForm(patientForm)">
-      <i class="fa fa-repeat"></i>
+    <button class="btn btn-primary" type="button" (click)="resetForm(patientForm)">
+      <i class="fas fa-ban"></i>
       Cancel</button>
   </div>
 </form>
