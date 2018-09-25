@@ -1,0 +1,29 @@
+<form #surveyForm="ngForm" (ngSubmit)="onSubmit(surveyForm)">
+    <input type="hidden" name="key" #key="ngModel" [(ngModel)]="selectedPatient.key">
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Cómo describe su apetito?</label>
+          <textarea class="form-control" name="questionOne" #questionOne="ngModel" [(ngModel)]="selectedPatient.questionOne"
+            placeholder="Cómo describe su apetito?" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Ha notado variación en los últimos 12 meses?</label>
+          <textarea type="number" class="form-control" name="questionTwo" #questionTwo="ngModel" [(ngModel)]="selectedPatient.questionTwo"
+            placeholder="Ha notado variación en los ultimos 12 meses?" required></textarea>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row float-right">
+      <button class="btn btn-primary mr-1" type="submit" [disabled]="!surveyForm.valid">
+        <i class="fas fa-save"></i>
+        Submit</button>
+      <button class="btn btn-primary" type="button" (click)="resetForm(surveyForm)">
+        <i class="fas fa-ban"></i>
+        Cancel</button>
+    </div>
+  </form>

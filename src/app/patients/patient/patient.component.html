@@ -1,4 +1,4 @@
-<form #patientForm="ngForm" (ngSubmit)="onSubmit(patientForm)">
+<form #patientForm="ngForm" *ngIf="!surveyView" (ngSubmit)="onSubmit(patientForm)">
   <input type="hidden" name="key" #key="ngModel" [(ngModel)]="selectedPatient.key">
 
   <div class="row">
@@ -56,8 +56,10 @@
     </div>
   </div>
 
+
   <div class="row">
-      <button type="button" class="btn btn-link" (click)="showConsultations()">Ver Consultas</button>
+    <button type="button" class="btn btn-link" (click)="surveyView = !surveyView">Ver Entrevista</button>
+    <button type="button" class="btn btn-link" (click)="showConsultations()">Ver Consultas</button>
   </div>
 
   <div class="row float-right">
@@ -69,3 +71,4 @@
       Cancel</button>
   </div>
 </form>
+<patient-survey *ngIf="surveyView" [selectedPatient]="selectedPatient" (cancelEdition)="surveyView = false;"></patient-survey>
