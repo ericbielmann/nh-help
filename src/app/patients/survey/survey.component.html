@@ -17,6 +17,115 @@
         </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Come aprox. a la misma hora todos los días?</label>
+          <textarea class="form-control" name="questionThree" #questionThree="ngModel" [(ngModel)]="selectedPatient.questionThree"
+            placeholder="Come aprox. a la misma hora todos los días?" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Desayuna?</label>
+          <textarea type="number" class="form-control" name="questionFour" #questionFour="ngModel" [(ngModel)]="selectedPatient.questionFour"
+            placeholder="Desayuna?" required></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Omite comidas principales?</label>
+          <textarea class="form-control" name="questionFive" #questionFive="ngModel" [(ngModel)]="selectedPatient.questionFive"
+            placeholder="Omite comidas principales?" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Come usualmente algo entre comidas?</label>
+          <textarea type="number" class="form-control" name="questionSix" #questionSix="ngModel" [(ngModel)]="selectedPatient.questionSix"
+            placeholder="Come usualmente algo entre comidas?" required></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Cuál es su comida más importante?</label>
+          <textarea class="form-control" name="questionSeven" #questionSeven="ngModel" [(ngModel)]="selectedPatient.questionSeven"
+            placeholder="Cuál es su comida más importante?" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Hay algún alimento que no pueda comer?</label>
+          <textarea type="number" class="form-control" name="questionEight" #questionEight="ngModel" [(ngModel)]="selectedPatient.questionEight"
+            placeholder="Hay algún alimento que no pueda comer?" required></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Es alérgico a algún alimento?</label>
+          <textarea class="form-control" name="questionNine" #questionNine="ngModel" [(ngModel)]="selectedPatient.questionNine"
+            placeholder="Es alérgico a algún alimento?" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Comidas que no le gustan:</label>
+          <textarea type="number" class="form-control" name="questionTen" #questionTen="ngModel" [(ngModel)]="selectedPatient.questionTen"
+            placeholder="Comidas que no le gustan:" required></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Ingiere lácteos y derivados?</label>
+          <textarea class="form-control" name="questionEleven" #questionEleven="ngModel" [(ngModel)]="selectedPatient.questionEleven"
+            placeholder="Ingiere lácteos y derivados?" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Ingiere carnes?</label>
+          <textarea type="number" class="form-control" name="questionTwelve" #questionTwelve="ngModel" [(ngModel)]="selectedPatient.questionTwelve"
+            placeholder="Ingiere carnes?" required></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Ingiere legumbres</label>
+          <textarea class="form-control" name="questionThirteen" #questionThirteen="ngModel" [(ngModel)]="selectedPatient.questionThirteen"
+            placeholder="Ingiere legumbres" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Ingiere verduras?</label>
+          <textarea type="number" class="form-control" name="questionFourteen" #questionFourteen="ngModel" [(ngModel)]="selectedPatient.questionFourteen"
+            placeholder="Ingiere verduras?" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Ingiere frutas?</label>
+          <textarea type="number" class="form-control" name="questionFifteen" #questionFifteen="ngModel" [(ngModel)]="selectedPatient.questionFifteen"
+            placeholder="Ingiere frutas?" required></textarea>
+        </div>
+      </div>
+    </div>
   
     <div class="row float-right">
       <button class="btn btn-primary mr-1" type="submit" [disabled]="!surveyForm.valid">
