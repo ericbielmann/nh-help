@@ -13,7 +13,7 @@ import { SpotifyService } from "../../services/spotify.service";
 export class MusicSearchComponent implements OnInit, OnDestroy {
 
     private searchText: string;
-    private artistRes: Artist[];
+    artistRes: Artist[];
     private defaultImage = 'assets/default-image.png';
     private subscription: ISubscription[] = [];
 

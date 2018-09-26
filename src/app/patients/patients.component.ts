@@ -10,7 +10,7 @@ import { Patient } from '../models/patient';
 })
 export class PatientsComponent implements OnInit {
 
-  private selectedPatient: Patient;
+  selectedPatient: Patient;
 
   constructor() { }
 

@@ -10,7 +10,7 @@ import { Consultation } from '../models/consultation';
 })
 export class ConsultationsComponent implements OnInit {
 
-  private selectedConsultation: Consultation;
+  selectedConsultation: Consultation;
 
   constructor() { }
 

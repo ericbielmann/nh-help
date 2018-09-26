@@ -10,7 +10,7 @@ import { SpotifyService } from "../../services/spotify.service";
 })
 export class FavoriteListComponent implements OnInit {
 
-    private favorites = [];
+    favorites = [];
 
     constructor(private spotifyService: SpotifyService) {}
 

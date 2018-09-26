@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
   }
 
   constructor(private filterService: FilterTextService,
-    private router: Router) {
+    public router: Router) {
   }
 
   filterChanged(searchText: string) {

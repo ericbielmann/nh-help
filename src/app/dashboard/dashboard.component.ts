@@ -15,8 +15,8 @@ import { TokenService } from "../core/token.service";
 export class DashboardComponent implements OnInit, OnDestroy {
 
   private userInfo: any;
-  private searchText = '';
-  private showFavorites = true;
+  searchText = '';
+  showFavorites = true;
   private subscription: ISubscription[] = [];
 
   constructor(private spotifyService: SpotifyService,

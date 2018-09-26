@@ -15,6 +15,8 @@ export class PatientComponent implements OnInit {
   @Input() selectedPatient: Patient;
   @Output() selectedChange = new EventEmitter<Patient>();
 
+  surveyView: boolean = false;
+
   constructor(private patientService: PatientService, 
     private toastService: ToastService,
     private router: Router) { }
