@@ -15,6 +15,11 @@ import { TokenInterceptor } from "./token.interceptor";
 import { TokenService } from "./token.service";
 import { ToastService } from './toast.service';
 
+import { fakeBackendProvider } from './fake-backend';
+import { JwtInterceptor } from './jwt.interceptor';
+import { ErrorInterceptor } from './error.interceptor';
+
+
 @NgModule({
   imports: [CommonModule,
     BrowserAnimationsModule,
@@ -31,7 +36,14 @@ import { ToastService } from './toast.service';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider,
+    { provide: 'BASE_URL', useFactory: getBaseUrl }
   ]
 })
 export class CoreModule {
@@ -41,4 +53,10 @@ export class CoreModule {
         'CoreModule is already loaded. Import it in the AppModule only');
     }
   }
+
+  
+}
+
+export function getBaseUrl() {
+  return document.getElementsByTagName('base')[0].href;
 }

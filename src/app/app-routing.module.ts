@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './core/auth.guard';
 
 export const routes: Routes = [
     // { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-    { path: '', pathMatch: 'full', redirectTo: 'nh-patients' },
-    { path: 'consultations/:patientKey', loadChildren: './consultations/consultations.module#ConsultationsModule' },
-    // { path: 'nh-patients', loadChildren: './patients/patients.module#PatientsModule' },
-    { path: 'callback', loadChildren: './callback/callback.module#CallbackModule' },
-    {
-        path: '',
-        redirectTo: '',
-        pathMatch: 'full'
-      }
+    { path: '', pathMatch: 'full', redirectTo: 'nh-patients', canActivate: [AuthGuard] },
+    { path: 'consultations/:patientKey', loadChildren: './consultations/consultations.module#ConsultationsModule', canActivate: [AuthGuard] },
+    { path: 'nh-login', loadChildren: './login/login.module#LoginModule' },
+    { path: 'nh-patients', loadChildren: './patients/patients.module#PatientsModule', canActivate: [AuthGuard] },
+    // { path: 'callback', loadChildren: './callback/callback.module#CallbackModule' },
+    { path: '**', redirectTo: '' }
+    // {
+    //     path: '',
+    //     redirectTo: '',
+    //     pathMatch: 'full'
+    //   }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [AuthGuard]
 })
 export class AppRoutingModule { }

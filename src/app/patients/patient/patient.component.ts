@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from "@angular/router";
-import { NgForm } from '@angular/forms'
+import { NgForm } from '@angular/forms';
 
 import { Patient } from '../../models/patient';
 import { PatientService } from '../../services/patient.service';
