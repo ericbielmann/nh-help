@@ -23,4 +23,13 @@ export class Patient {
     questionThirteen?: string;
     questionFourteen?: string;
     questionFifteen?: string;
+    questionSixteen?: string;
+    questionSeventeen?: string;
+    questionEighteen?: string;
+    questionNineteen?: string;
+    questionTwenty?: string;
+    questionTwentyOne?: string;
+    questionTwentyTwo?: string;
+    questionTwentyThree?: string;
+    questionTwentyFour?: string;
 }
