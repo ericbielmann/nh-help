@@ -1,6 +1,7 @@
 <table class="table table-sm table-hover">
   <thead>
     <tr>
+      <th>Fecha</th>
       <th>Altura</th>
       <th>Peso</th>
       <th>Grasa Total</th>
@@ -10,6 +11,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let consultation of consultations">
+      <td>{{consultation.date}}</td>
       <td>{{consultation.height}}</td>
       <td>{{consultation.weight}}</td>
       <td>{{consultation.totalFat}}</td>

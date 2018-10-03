@@ -35,6 +35,7 @@ export class ConsultationComponent implements OnInit {
     }
 
     this.consultationService.selectedConsultation = {
+      date: null,
       comment: null,
       height: null,
       imc: null,

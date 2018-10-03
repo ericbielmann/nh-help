@@ -2,21 +2,28 @@
   <input type="hidden" name="key" #key="ngModel" [(ngModel)]="selectedConsultation.key">
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
+      <div class="form-group">
+        <label>Fecha</label>
+        <input type="date" class="form-control" name="date" #date="ngModel" [(ngModel)]="selectedConsultation.date"
+          placeholder="date" required>
+      </div>
+    </div>
+    <div class="col-md-3">
       <div class="form-group">
         <label>Altura</label>
         <input type="number" class="form-control" name="height" #height="ngModel" [(ngModel)]="selectedConsultation.height"
           placeholder="Altura" required>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="form-group">
         <label>Cirq. Muñeca</label>
         <input type="number" class="form-control" name="wristCircumfence" #wristCircumfence="ngModel" [(ngModel)]="selectedConsultation.wristCircumfence"
           placeholder="Cirq. Muñeca" required>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="form-group">
         <label>Peso</label>
         <input type="number" class="form-control" name="weight" #weight="ngModel" [(ngModel)]="selectedConsultation.weight"

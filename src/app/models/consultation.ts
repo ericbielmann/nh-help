@@ -1,4 +1,5 @@
 export class Consultation {
+    date: Date;
     key: string;
     patientKey: string;
     height: number;
